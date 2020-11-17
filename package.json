@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js",
+    "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KubeDev/api-conversao.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/KubeDev/api-conversao.git",
+  "author": "IGOR DOS SANTOS FERREIRA <igorferreira.noorden@sulamericaauto.com.br>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KubeDev/api-conversao/issues"
@@ -18,7 +17,11 @@
   "homepage": "https://github.com/KubeDev/api-conversao#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "ip": "^1.1.5",
     "swagger-ui-express": "^4.1.4",
     "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
