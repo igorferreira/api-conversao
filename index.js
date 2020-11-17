@@ -5,6 +5,7 @@ const app = express();
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./swagger.yaml');
+const port = process.env.PORT || 80
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument)); 
 
@@ -32,6 +33,6 @@ app.get('/celsius/:valor/fahrenheit', (req, res) => {
     res.json({ "fahrenheit": fahrenheitArrendondado, "maquina": os.hostname() });
 });
 
-app.listen(8080, () => {
-    console.log("Servidor rodando na porta 8080");
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
 });
