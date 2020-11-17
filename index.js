@@ -20,14 +20,16 @@ app.get('/fahrenheit/:valor/celsius', (req, res) => {
 
     let valor = req.params.valor;
     let celsius = (valor - 32) * 5 / 9;
-    res.json({ "celsius": celsius, "maquina": os.hostname() });
+    const celsusArrendondado = celsius.toFixed(2); 
+    res.json({ "celsius": celsusArrendondado, "maquina": os.hostname() });
 });
 
 app.get('/celsius/:valor/fahrenheit', (req, res) => {
 
     let valor = req.params.valor;
     let fahrenheit = (valor * 9 / 5) + 32;
-    res.json({ "fahrenheit": fahrenheit, "maquina": os.hostname() });
+    const fahrenheitArrendondado = fahrenheit.toFixed(2); 
+    res.json({ "fahrenheit": fahrenheitArrendondado, "maquina": os.hostname() });
 });
 
 app.listen(8080, () => {
